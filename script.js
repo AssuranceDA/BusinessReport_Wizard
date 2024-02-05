@@ -66,6 +66,10 @@ document.addEventListener('DOMContentLoaded', function() {
                             // <strong> 태그에 대해서는 'inline'으로 설정하여 개행을 방지
                             el.style.display = 'inline';
                             break;
+                        case 'a':
+                            // <strong> 태그에 대해서는 'inline'으로 설정하여 개행을 방지
+                            el.style.display = 'inline';
+                            break;
                         case 'UL':
                             // <ul> 태그에 대해서는 'block'으로 설정하여 기본 스타일을 유지
                             el.style.display = 'block';
@@ -81,6 +85,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 }
             });
+
 
             // URL 해시를 목차 번호로 변경
             history.pushState(null, null, `#toc-${currentIndex}`);
