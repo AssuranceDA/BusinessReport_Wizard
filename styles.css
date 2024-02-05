@@ -1,0 +1,155 @@
+/* CSS 스타일 */
+body {
+  display: flex;
+  margin: 0;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+#tocContainer {
+  position: fixed;
+  /* 목차의 위치를 고정 */
+  top: 0;
+  /* 상단에 고정 */
+  left: 0;
+  /* 좌측에 고정 */
+  width: 20%;
+  overflow-y: auto;
+  background: #fff;
+  padding: 20px;
+  padding-bottom: 20px; /* 하단에 20px의 패딩을 추가 */
+  height: calc(100vh - 20px); /* 전체 높이에서 하단 패딩만큼 빼서 설정 */
+}
+
+#tocContainer li.toc-level-1 {
+  margin-top: 25px; 
+  border-bottom: 1px solid #000;  /* 검은색 1픽셀 구분 줄을 추가합니다 */
+  padding-bottom: 10px;  /* 구분 줄과 텍스트 사이에 여백을 추가합니다 */
+}
+
+#tocContainer li.toc-level-2 {
+  margin-top: 15px; 
+  border-bottom: 1px solid #ccc;  /* 희미한 회색 1픽셀 구분 줄을 추가합니다 */
+  padding-bottom: 10px;  /* 구분 줄과 텍스트 사이에 여백을 추가합니다 */
+}
+
+
+#tocContainer .active {
+  background-color: rgba(0, 0, 255, 0.1); /* 파란색 음영 효과 */
+  /* 추가 스타일링이 필요하다면 여기에 */
+}
+
+
+#contentContainer {
+  margin-top: 20px;
+  margin-left: 25%;
+  padding: 20px;
+  padding-right: 15%;  /* 오른쪽 패딩을 추가하여 여백을 만듭니다 */
+  background-color: #fff;
+  width: 80%;  /* 너비를 100%로 설정하여 부모 요소의 너비에 맞춥니다 */
+  box-sizing: border-box;  /* 패딩을 너비에 포함 */
+  overflow-y: auto;  /* 세로 방향으로 내용이 넘칠 경우 스크롤바를 표시 */
+}
+
+#contentContainer h1,
+#contentContainer h2,
+#contentContainer h3 {
+  border-bottom: 1px solid #000;  /* 검은색 1픽셀 구분 줄을 추가합니다 */
+  padding-bottom: 10px;  /* 구분 줄과 텍스트 사이에 여백을 추가합니다 */
+}
+
+
+/* 본문 내용에 대한 스타일 */
+.content {
+  padding: 0 15px;
+  /* 좌우 내부 패딩을 추가하여 텍스트에 여백을 줌 */
+}
+
+.toc {
+  list-style: none;
+  padding: 0;
+}
+
+.toc li {
+  margin: 5px 0;
+}
+
+.toc a {
+  text-decoration: none;
+  color: black;
+}
+
+.toc a:hover {
+  text-decoration: underline;
+}
+
+.custom-img {
+  display: block;
+  /* 이미지를 블록 요소로 만듭니다. */
+  margin: 0 auto;
+  /* 상하 마진은 0, 좌우 마진은 auto로 설정하여 중앙 정렬합니다. */
+  max-width: 100%;
+  /* 이미지의 최대 가로 길이를 100%로 설정하여, 부모 요소를 넘어서지 않도록 합니다. */
+  height: auto;
+  /* 이미지의 높이를 자동으로 조절하여 비율을 유지합니다. */
+}
+
+/* 목차의 기본 스타일을 제거하고 인덴테이션을 추가합니다. */
+.toc ul {
+  list-style-type: none;
+  /* 동그라미 제거 */
+  padding-left: 0;
+  /* 왼쪽 패딩 제거 */
+}
+
+.toc li {
+  cursor: pointer;
+  /* 마우스 오버 시 커서 변경 */
+  position: relative;
+  /* 하위 요소 위치 지정을 위해 relative 설정 */
+}
+
+/* 각 toc-level에 따라 인덴테이션을 추가합니다. */
+.toc .toc-level-1 {
+  padding-left: 10px;
+  font-weight: bold;
+
+}
+
+.toc .toc-level-2 {
+  padding-left: 30px;
+  font-weight: bold;
+}
+
+.toc .toc-level-3 {
+  padding-left: 50px;
+}
+
+
+.toc hr {
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+.toc p {
+  font-size: 0.9em;
+  color: #666;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.section-indicator {
+  padding: 10px;
+  border-bottom: 2px solid #000; /* 하단 테두리 */
+  background-color: rgb(255, 255, 255); /* 배경색 */
+  font-weight: bold; /* 볼드체 */
+  margin-bottom: 20px; /* 본문 내용과의 여백 */
+}
+
+#currentSectionText {
+  font-family: 'Times, sans-serif';
+  font-size: 15px; 
+  color: #666;
+  font-style: italic; 
+}

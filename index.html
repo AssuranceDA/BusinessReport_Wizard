@@ -1,0 +1,422 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사업보고서 공시 자동화 메뉴얼</title>
+    <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+    <div id="tocContainer">
+        <div class='toc'>
+<ul><li class='toc-level-1' data-index='1'><a href='#section-1'>사업보고서 Wizard 메뉴얼</a></li>
+<li class='toc-level-1' data-index='2'><a href='#section-2'>1. 실행 클라이언트 가이드</a></li>
+<li class='toc-level-2' data-index='2.1'><a href='#section-2.1'>(1) Initial Template 생성</a></li>
+<li class='toc-level-3' data-index='2.1.1'><a href='#section-2.1.1'>1) 단계 설명</a></li>
+<li class='toc-level-3' data-index='2.1.2'><a href='#section-2.1.2'>2) 클라이언트 화면</a></li>
+<li class='toc-level-3' data-index='2.1.3'><a href='#section-2.1.3'>3) 사업보고서 작성 부서 엑셀 파일 작성</a></li>
+<li class='toc-level-2' data-index='2.2'><a href='#section-2.2'>(2) 부서별 Template 생성</a></li>
+<li class='toc-level-3' data-index='2.2.1'><a href='#section-2.2.1'>1) 단계 설명</a></li>
+<li class='toc-level-3' data-index='2.2.2'><a href='#section-2.2.2'>2) 클라이언트 화면</a></li>
+<li class='toc-level-3' data-index='2.2.3'><a href='#section-2.2.3'>3) 부서 맵핑</a></li>
+<li class='toc-level-4' data-index='2.2.3.1'><a href='#section-2.2.3.1'>부서 맵핑 개요 (DSD 시트 상 B~N열)</a></li>
+<li class='toc-level-4' data-index='2.2.3.2'><a href='#section-2.2.3.2'>기본 작성 방법</a></li>
+<li class='toc-level-4' data-index='2.2.3.3'><a href='#section-2.2.3.3'>🚫 주의사항 - 다음과 같은 경우 오류가 발생합니다.</a></li>
+<li class='toc-level-3' data-index='2.2.4'><a href='#section-2.2.4'>4) 검증표 작성</a></li>
+<li class='toc-level-4' data-index='2.2.4.1'><a href='#section-2.2.4.1'>검증표 작성 개요</a></li>
+<li class='toc-level-4' data-index='2.2.4.2'><a href='#section-2.2.4.2'>기본 작성 방법</a></li>
+<li class='toc-level-4' data-index='2.2.4.3'><a href='#section-2.2.4.3'>🚫 주의사항 - 다음과 같은 경우 검증 오류로 Template 생성이 중단 됩니다.</a></li>
+<li class='toc-level-3' data-index='2.2.5'><a href='#section-2.2.5'>5) 최종 파일 리스트 작성</a></li>
+<li class='toc-level-4' data-index='2.2.5.1'><a href='#section-2.2.5.1'>관련 개요</a></li>
+<li class='toc-level-2' data-index='2.3'><a href='#section-2.3'>(3) 사업보고서 최종 DSD 생성</a></li>
+<li class='toc-level-3' data-index='2.3.1'><a href='#section-2.3.1'>1) 단계 설명</a></li>
+<li class='toc-level-3' data-index='2.3.2'><a href='#section-2.3.2'>2) 클라이언트 화면</a></li>
+<li class='toc-level-2' data-index='2.4'><a href='#section-2.4'>(4) Initial Rolling 작업 - TBD</a></li>
+<li class='toc-level-3' data-index='2.4.1'><a href='#section-2.4.1'>1) 단계 설명</a></li>
+<li class='toc-level-3' data-index='2.4.2'><a href='#section-2.4.2'>2) 클라이언트 화면</a></li>
+<li class='toc-level-2' data-index='2.5'><a href='#section-2.5'>(5) 사업보고서 대사</a></li>
+<li class='toc-level-3' data-index='2.5.1'><a href='#section-2.5.1'>1) 기능 설명</a></li>
+<li class='toc-level-3' data-index='2.5.2'><a href='#section-2.5.2'>2) 클라이언트 화면</a></li>
+<li class='toc-level-1' data-index='3'><a href='#section-3'>2. 부서별 Template 작성 가이드</a></li>
+<li class='toc-level-2' data-index='3.1'><a href='#section-3.1'>(1) 개요</a></li>
+<li class='toc-level-3' data-index='3.1.1'><a href='#section-3.1.1'>1) 필수 글씨와 필수 표</a></li>
+<li class='toc-level-4' data-index='3.1.1.1'><a href='#section-3.1.1.1'>필수 글씨는 다음과 같습니다.</a></li>
+<li class='toc-level-4' data-index='3.1.1.2'><a href='#section-3.1.1.2'>필수 표는 다음과 같습니다.</a></li>
+<li class='toc-level-4' data-index='3.1.1.3'><a href='#section-3.1.1.3'>필수 글씨와 필수 표외 글씨와 표는 일반 글씨 및 일반 표로 지칭합니다.</a></li>
+<li class='toc-level-2' data-index='3.2'><a href='#section-3.2'>(2) 리본메뉴(BRS Editor)</a></li>
+<li class='toc-level-2' data-index='3.3'><a href='#section-3.3'>(3) 개별/전체 검증</a></li>
+<li class='toc-level-2' data-index='3.4'><a href='#section-3.4'>(4) 표시 변경</a></li>
+<li class='toc-level-2' data-index='3.5'><a href='#section-3.5'>(5) 필수 표 메뉴</a></li>
+<li class='toc-level-2' data-index='3.6'><a href='#section-3.6'>(6) 작성가이드 메뉴</a></li>
+</ul>
+</div><hr>
+<p style='font-style: italic; font-family: Arial; font-size: 13px;font-weight: bold;'><a href='https://www.pwc.com/kr/ko/digital-solutions/robotic-application.html'>Published by PwC Robotic Application Team</a></p>
+
+    </div>
+    <div id="contentContainer">
+        <div id="sectionIndicator" class="section-indicator"></div>
+        <h1 id="section-1">사업보고서 Wizard 메뉴얼</h1>
+<p><a href="https://business-report_wizard.surge.sh">사업보고서 Wizard 메뉴얼 사이트 바로가기</a></p>
+<hr/>
+<h1 id="section-2">1. 실행 클라이언트 가이드</h1>
+<h2 id="section-2.1">(1) Initial Template 생성</h2>
+<h3 id="section-2.1.1">1) 단계 설명</h3>
+<p><strong style="display: inline;">본 단계는 최초 사업보고서 Initial Template를 생성하는 단계입니다.<br/></strong><br>
+다음의 자료를 토대로 엑셀 기반의 사업보고서 작성을 위한 Template를 생성합니다.</br></p>
+<p>(1) 전년 동기 DSD <br/>
+(2) 직전 분기 DSD <br/>
+(3) 사업보고서 작성 부서 엑셀 파일</p>
+<blockquote style="background-color: #F5F5F5; padding: 10px; margin-left: 0; margin-right: 0;"><div class="blockquote-sidebar"></div>
+<p>Ex) 2023년 기말 사업보고서 작성 시<br/>
+(1) 전년 동기 DSD는 2022년 기말 사업보고서 DSD이며,<br/>
+(2) 직전 분기 DSD는 2023년 3분기 보고서 DSD입니다.</p>
+</blockquote>
+<p><br/></p>
+<h3 id="section-2.1.2">2) 클라이언트 화면</h3>
+<p><img alt="client_step1.jpg" class="custom-img" src="./_resources/client_step1.jpg"/></p>
+<p><br/></p>
+<h3 id="section-2.1.3">3) 사업보고서 작성 부서 엑셀 파일 작성</h3>
+<p>작성 부서 엑셀 파일 A열에 아래와 같이 부서명을 아래 방향으로 기재합니다.<br>
+만일 동일 부서 내 담당자가 여러명인 경우 회계팀1 / 회계팀2 등으로 기재 부탁 드립니다.</br></p>
+<p><img alt="작성부서엑셀1.jpg" class="custom-img" src="./_resources/작성부서엑셀1.jpg"/></p>
+<hr/>
+<h2 id="section-2.2">(2) 부서별 Template 생성</h2>
+<h3 id="section-2.2.1">1) 단계 설명</h3>
+<p><strong style="display: inline;">본 단계는 1-(1) 에서 생성된 엑셀 파일(xlsm)을 토대로 작성 부서 별 엑셀 파일(xlsm) N개를 생성합니다.</strong></p>
+<p>1-(1)에서 생성한 사업보고서 Initial Template를 기반으로 아래와 같은 작업을 진행해주셔야 합니다.</p>
+<p>(1) 사업보고서 작성 영역을 각 사업부 R&amp;R에 맞게 분배 <br>
+(2) 사업보고서 내용 상 검증이 필요한 금액의 경우 검증표에 맵핑<br/>
+(3) 부서별 Template 생성 결과인 separate_template 폴더 sharepoint 상에 업로드 및 "최종 파일 리스트.xlsx" 작성</br></p>
+<p><br/></p>
+<h3 id="section-2.2.2">2) 클라이언트 화면</h3>
+<p><img alt="client_step2.jpg" class="custom-img" src="./_resources/client_step2.jpg"/></p>
+<p><br/></p>
+<h3 id="section-2.2.3">3) 부서 맵핑</h3>
+<h4 id="section-2.2.3.1">부서 맵핑 개요 (DSD 시트 상 B~N열)</h4>
+<p>아래 화면에서 회계팀에서 빨간색으로 표시된 영역이 배정되었습니다.(10~13행)<br>
+또한 표의 영역이기 때문에  "⤷테이블 끝" 부분까지 올바르게 할당된 것을 알 수 있습니다.</br></p>
+<ul class="custom-ul">
+<li class="custom-li">회계팀에게 관련 부분을 배정하기 위해서는 회계팀의 열인 D열에 관련 영역을 O 표시하시면 됩니다.<br>
+<br/></br></li>
+</ul>
+<blockquote style="background-color: #F5F5F5; padding: 10px; margin-left: 0; margin-right: 0;"><div class="blockquote-sidebar"></div>
+<p>Initial Template 상 DSD 시트</p>
+</blockquote>
+<p><img alt="DSD시트1.jpg" class="custom-img" src="./_resources/DSD시트1.jpg"/><br>
+<br/></br></p>
+<h4 id="section-2.2.3.2">기본 작성 방법</h4>
+<ol>
+<li class="custom-li">위의 화면 상 B~L열에 대해서 BA열의 전년 동기 사업보고서 내용을 보시고 사업보고서 작성 부서(R&amp;R)를 O 표시로 표시해주시기 바랍니다.</li>
+<li class="custom-li">감사보고서와 연결 감사보고서 내용은 각각 스마트리뷰어_별도(M열), 스마트리뷰어_연결(N열)로 자동 맵핑되어 있습니다. 1의 작업 시 이 부분은 생략하고 진행해주시면 되겠습니다.</li>
+<li class="custom-li">사업보고서 상 각 영역은 <strong style="display: inline;">하나의 부서</strong>에게 할당 되어야 합니다.<br/> 예를들어 하나의 표를 2개의 다른 부서에게 할당하는 것은 불가능합니다. </li>
+<li class="custom-li">🚫 특히 필수 표의 경우 <strong style="display: inline;">Dart 표준 양식 상 반드시 지켜져야 하는 형식이 존재</strong>하며, 여러 부서에게 할당되지 않도록 각별한 주의가 필요합니다.</li>
+<li class="custom-li">표의 경우 "⤷테이블 끝"까지 표의 영역이오니, 표의 영역을 할당하실 때에는 해당 부분까지 포함될 수 있도록 확인 부탁 드립니다.<br>
+<br/></br></li>
+</ol>
+<h4 id="section-2.2.3.3">🚫 주의사항 - 다음과 같은 경우 오류가 발생합니다.</h4>
+<ol>
+<li class="custom-li">하나의 필수 표 영역에 대해서 해당 영역의 일부 또는 전부를 다수의 부서에 배정하는 경우  </li>
+<li class="custom-li">사업보고서 상 동일 영역을 다수의 부서에 배정하는 경우<blockquote style="background-color: #F5F5F5; padding: 10px; margin-left: 0; margin-right: 0;"><div class="blockquote-sidebar"></div>
+<p>Ex) 사업보고서라는 제목(6행)을 회계팀, 법무팀 등에 동시에 배정한 경우</p>
+</blockquote>
+</li>
+</ol>
+<p><br/></p>
+<h3 id="section-2.2.4">4) 검증표 작성</h3>
+<h4 id="section-2.2.4.1">검증표 작성 개요</h4>
+<p>아래 화면 상 자금팀과 회계팀의 자본금은 동일하나, 경영기획팀의 자본금이 상이한 것을 알 수 있습니다.<br>
+관련 부분을 최초에 한번만 맵핑해주게 되면 추후 부서별 Template으로 나누어져서 새롭게 작성되어도 작성된 검증표에 대한 링크가 연결됩니다.</br></p>
+<p><img alt="검증표1.jpg" class="custom-img" src="./_resources/검증표1.jpg"/></p>
+<h4 id="section-2.2.4.2">기본 작성 방법</h4>
+<ol>
+<li class="custom-li">
+<p>모든 열은 작성이 되어 있어야 합니다.</p>
+</li>
+<li class="custom-li">
+<p>변수_ID는 다음과 같은 규칙으로 이루어져 있습니다.</p>
+<ul class="custom-ul">
+<li class="custom-li">"그룹번호-일련번호"</li>
+<li class="custom-li">같은 그룹 내 부여된 일련번호는 동일한 금액을 가져야 한다는 로직으로 검증이 진행됩니다.<blockquote style="background-color: #F5F5F5; padding: 10px; margin-left: 0; margin-right: 0;"><div class="blockquote-sidebar"></div>
+<p>Ex) 검증표 상 "그룹번호 101" 상 일련번호 001 / 002 / 003이 존재합니다.<br/> 이때 자금팀과 회계팀의 금액은 382로 일치하나 경영기획팀의 금액은 261,911로 다른 팀의 금액들과 다릅니다.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li class="custom-li">
+<p>변수_이름과 비고는 자유로이 적어주시되, 서로 Refernce 되는 항목들은 동일하게 기재 부탁 드립니다.</p>
+</li>
+<li class="custom-li">
+<p>금액은 "DSD" 시트 상에서 셀 참조로 작성해주셔야 하며(ex: =DSD!BA54),<br>
+참조된 셀에 표시된 DSD 시트 상 부서 맵핑(동그라미(O) 표시)과 검증표 상 부서명은 일치해야 합니다.</br></p>
+</li>
+<li class="custom-li">
+<p>부서명은 5를 고려하여 작성해주시기 바랍니다.<br>
+<br/></br></p>
+</li>
+</ol>
+<h4 id="section-2.2.4.3">🚫 주의사항 - 다음과 같은 경우 <strong style="display: inline;">검증 오류로 Template 생성이 중단</strong> 됩니다.</h4>
+<p>검증표 검증 실패로 인해 Template 생성이 중단될 시 검증 실패 내역 정리된 엑셀 파일을 통해 검증표 수정 후 재 시도 부탁 드립니다.(TBD)</p>
+<ol>
+<li class="custom-li">DSD 시트 상 "회계부"에 동그라미(O) 표시 되어 있는 행과 관련 된 금액을 검증표 상 "자금부"의 금액으로 입력한 경우</li>
+<li class="custom-li">금액열을 DSD 상 셀 참조가 아닌 숫자로 Key-in하는 경우</li>
+<li class="custom-li">검증표 상 비어있는 셀이 있는 경우<br>
+<br/></br></li>
+</ol>
+<h3 id="section-2.2.5">5) 최종 파일 리스트 작성</h3>
+<h4 id="section-2.2.5.1">관련 개요</h4>
+<p>1-(2) 부서별 Template 생성을 진행하시게 되면 아래와 같이 separate_template 폴더 안에 각 부서별 폴더 및 부서별 Template이 생성됩니다.<br>
+해당 폴더를 Sharepoint로 업로드하여 작성 부서 별로 사업보고서 작성을 진행해주시면 되겠습니다.</br></p>
+<p>이때, 스마트리뷰어_별도 및 스마트리뷰어_연결 폴더의 경우 최초 생성 시에 <strong style="display: inline;">빈 폴더</strong>로 생성되며,<br/> 회계팀에서 작성하신 <strong style="display: inline;">스마트리뷰어 파일을 관련 폴더</strong>에 넣어주시기 바랍니다.</p>
+<p><img alt="separate_template.jpg" class="custom-img" src="./_resources/separate_template.jpg"/><br>
+<br/></br></p>
+<p>"최종 파일 리스트.xlsx"는 자동으로 생성되며, 최초 생성 시 스마트리뷰어 파일명을 확장자(.xlsm)와 함께 입력 부탁 드리겠습니다.<br/><br>
+만일 관련 파일명이나 폴더명이 변경된 경우 (3) 사업보고서 최종 DSD 생성 전 "최종 파일 리스트.xlsx"를 업데이트 해주셔야 합니다.</br></p>
+<p><strong style="display: inline;">🚫 "최종 파일 리스트.xlsx"의 이름은 고정 값으로 변경하셔서는 안됩니다.</strong></p>
+<p><img alt="최종파일리스트1.jpg" class="custom-img" src="./_resources/최종파일리스트1.jpg"/></p>
+<p><br/></p>
+<hr/>
+<h2 id="section-2.3">(3) 사업보고서 최종 DSD 생성</h2>
+<h3 id="section-2.3.1">1) 단계 설명</h3>
+<p><strong style="display: inline;">본 단계는 1-(2) 에서 생성된 작성 부서 별 엑셀 파일(xlsm)을 토대로 최종적으로 사업보고서 DSD를 생성합니다.</strong><br>
+1-(2)에서 생성한 부서 별 Template를 기반으로 아래와 같은 작업을 진행해주셔야 합니다.</br></p>
+<p>(1) 부서 별 Template 작성 가이드에 맞게 사업보고서 작성 및 검증 수행<br>
+(Sharepoint 상 엑셀 환경에서 진행)</br></p>
+<p>(2) Sharepoint에서 작성된 Template을 하나의 압축 파일로 다운로드<br>
+(1-(2)-5) "최종 파일 리스트.xlsx" 작성 확인 필요)</br></p>
+<p><br/></p>
+<h3 id="section-2.3.2">2) 클라이언트 화면</h3>
+<p><img alt="client_step3.jpg" class="custom-img" src="./_resources/client_step3.jpg"/></p>
+<p><br/></p>
+<hr/>
+<h2 id="section-2.4">(4) Initial Rolling 작업 - TBD</h2>
+<h3 id="section-2.4.1">1) 단계 설명</h3>
+<p><strong style="display: inline;">본 단계는 최초 사업보고서 Initial Template를 생성하는 단계입니다. Initial Template 생성 대체 작업<br>
+<br/></br></strong></p>
+<h3 id="section-2.4.2">2) 클라이언트 화면</h3>
+<p><img alt="client_step4.jpg" class="custom-img" src="./_resources/client_step4.jpg"/></p>
+<p><br/></p>
+<hr/>
+<h2 id="section-2.5">(5) 사업보고서 대사</h2>
+<h3 id="section-2.5.1">1) 기능 설명</h3>
+<p><strong style="display: inline;">두 사업보고서 간 차이점을 대사하는 기능입니다.</strong> <br>
+현재 기준 DSD와 비교 대상 DSD를 입력 후 실행해주시면 사업보고서 대사 파일이 생성됩니다.</br></p>
+<p><br/></p>
+<h3 id="section-2.5.2">2) 클라이언트 화면</h3>
+<p><img alt="client_step5.jpg" class="custom-img" src="./_resources/client_step5.jpg"/></p>
+<p><br/></p>
+<hr/>
+<h1 id="section-3">2. 부서별 Template 작성 가이드</h1>
+<h2 id="section-3.1">(1) 개요</h2>
+<h3 id="section-3.1.1">1) 필수 글씨와 필수 표</h3>
+<h4 id="section-3.1.1.1">필수 글씨는 다음과 같습니다.</h4>
+<ul class="custom-ul">
+<li class="custom-li">각 단락의 제목, 중요 안내문구 등으로 DSD와 동일한 색으로 칠해져 있습니다.</li>
+<li class="custom-li">🚫 Dart 표준 양식 상 <strong style="display: inline;">필수 글씨는 삭제 및 다른 위치로 이동될 수 없습니다.</strong> </li>
+<li class="custom-li">📌따라서 <strong style="display: inline;">부서별 Template 작성</strong> 시에도 <strong style="display: inline;">삭제 및 다른 위치로 이동</strong>해서는 안됩니다.</li>
+</ul>
+<p><img alt="필수글씨2.jpg" class="custom-img" src="./_resources/필수글씨2.jpg"/><br>
+<img alt="필수글씨1.jpg" class="custom-img" src="./_resources/필수글씨1.jpg"/></br></p>
+<h4 id="section-3.1.1.2">필수 표는 다음과 같습니다.</h4>
+<p><img alt="필수표1.jpg" class="custom-img" src="./_resources/필수표1.jpg"/><br>
+<br/></br></p>
+<ul class="custom-ul">
+<li class="custom-li">
+<p>필수 표는  <strong style="display: inline;">파란색 테두리</strong>로 표시되어 있으며 Template 상 <strong style="display: inline;">유일한 이름으로 정의</strong>되어 있습니다.</p>
+<ul class="custom-ul">
+<li class="custom-li">🚫 Dart 표준 양식 상 <strong style="display: inline;">필수 표는 다음의 제약 사항이 있습니다.</strong><ol>
+<li class="custom-li">열 추가 및 열 삭제 불가(고정 양식)</li>
+<li class="custom-li">행 추가 및 행 삭제 가능 여부 각 행마다 상이</li>
+<li class="custom-li">셀 병합 설정 및 해제 불가(고정 양식)</li>
+</ol>
+</li>
+</ul>
+</li>
+<li class="custom-li">
+<p>📌따라서 <strong style="display: inline;">부서별 Template 작성</strong> 시에도 <strong style="display: inline;">다음의 제약 사항이 있습니다.</strong></p>
+<ol>
+<li class="custom-li">임의의 열 추가 및 열 삭제 금지</li>
+<li class="custom-li">행 추가 및 행 삭제 <strong style="display: inline;">리본 메뉴(BRS Editor) 이용</strong></li>
+<li class="custom-li">임의의 셀 병합 설정 및 해제 금지</li>
+</ol>
+</li>
+<li class="custom-li">
+<p>🚫(예시) <strong style="display: inline;">부서별 Template 작성</strong> 시 다음의 행위를 <strong style="display: inline;">지양</strong>하여 주시기 바랍니다.</p>
+<ol>
+<li class="custom-li">필수 표의 전부 또는 일부 영역을 선택하여 잘라내기(Ctrl + X) 하는 행위<blockquote style="background-color: #F5F5F5; padding: 10px; margin-left: 0; margin-right: 0;"><div class="blockquote-sidebar"></div>
+<p>필수 표에 설정된 이름 정의가 의도한 바와 다르게 변경되어 Dart 표준 양식에 맞춰 DSD 생성이 되지 않습니다.</p>
+</blockquote>
+</li>
+<li class="custom-li">필수 표에 임의의 열 추가/열 삭제/ 병합 정보의 변경을 시도하는 행위<blockquote style="background-color: #F5F5F5; padding: 10px; margin-left: 0; margin-right: 0;"><div class="blockquote-sidebar"></div>
+<p>Dart 표준 양식에 내장된 해당 필수 표의 특성과 엑셀에서 작성하신 표의 특성과 상이하여 DSD 생성이 되지 않습니다.</p>
+</blockquote>
+</li>
+<li class="custom-li"><strong style="display: inline;">리본 메뉴(BRS Editor) 이용</strong>하지 않고 임의의 행 추가/행 삭제를 하는 행위<blockquote style="background-color: #F5F5F5; padding: 10px; margin-left: 0; margin-right: 0;"><div class="blockquote-sidebar"></div>
+<p>Dart 표준 양식에 내장된 해당 필수 표의 특성과 엑셀에서 작성하신 표의 특성과 상이하여 DSD 생성이 되지 않습니다.</p>
+</blockquote>
+</li>
+<li class="custom-li">필수표의 위치를 <strong style="display: inline;">임의의 장소로 이동</strong> 시키는 행위 (복사/잘라내기/붙여넣기 등)<blockquote style="background-color: #F5F5F5; padding: 10px; margin-left: 0; margin-right: 0;"><div class="blockquote-sidebar"></div>
+<p>필수 표의 위치 역시 Dart 표준 양식에 내장되어 있습니다. 필수 표를 수정하는 것은 오직 행 추가 / 행 삭제 및 내용 작성에 한하여 가능합니다.</p>
+</blockquote>
+</li>
+</ol>
+</li>
+</ul>
+<p><br/></p>
+<h4 id="section-3.1.1.3">필수 글씨와 필수 표외 글씨와 표는 일반 글씨 및 일반 표로 지칭합니다.</h4>
+<ul class="custom-ul">
+<li class="custom-li">
+<p>필수 표를 포함한 모든 표는 다음과 같은 조건을 만족해야 합니다.</p>
+<ul class="custom-ul">
+<li class="custom-li">표의 모든 테두리가 정상적으로 설정되어 있음</li>
+<li class="custom-li">표의 끝에는 "⤷테이블 끝" 문구가 위치함</li>
+</ul>
+<blockquote style="background-color: #F5F5F5; padding: 10px; margin-left: 0; margin-right: 0;"><div class="blockquote-sidebar"></div>
+<p>이는 표의 영역을 정상적으로 식별하기 위한 필수적인 절차입니다.</p>
+</blockquote>
+</li>
+<li class="custom-li">
+<p>🚫(예시) 잘못된 일반 표 작성(필수 표도 동일)</p>
+<blockquote style="background-color: #F5F5F5; padding: 10px; margin-left: 0; margin-right: 0;"><div class="blockquote-sidebar"></div>
+<p>우측 상단 테두리가 올바르게 설정되어 있지 않습니다. 이 경우 표의 영역을 정상적으로 식별하기 어렵습니다.</p>
+</blockquote>
+</li>
+</ul>
+<p><img alt="일반표오류1.jpg" class="custom-img" src="./_resources/일반표오류1.jpg"/></p>
+<ul class="custom-ul">
+<li class="custom-li"><strong style="display: inline;">일반 표 및 일반 글씨</strong>의 경우 다음의 사항만 <strong style="display: inline;">주의</strong>하여 주시기 바랍니다.</li>
+<li class="custom-li">일반 표 등을 수정하실 때 <strong style="display: inline;">전체 열 추가 / 열 삭제 등의 행위로</strong> 인해서 <strong style="display: inline;">필수 글씨나 필수 표가 의도치않게 변경되는 경우</strong></li>
+</ul>
+<p><br/></p>
+<hr/>
+<h2 id="section-3.2">(2) 리본메뉴(BRS Editor)</h2>
+<p>BRS Editor는 부서별 Template의 작성 및 검증을 위하여 만들어진 PwC만의 리본 메뉴입니다.</p>
+<p>BRS Editor의 구조는 아래와 같이 네 가지 부분으로 이루어집니다.</p>
+<ol>
+<li class="custom-li">개별/전체 검증 부분</li>
+<li class="custom-li">표시 변경 부분 </li>
+<li class="custom-li">필수표 메뉴 부분</li>
+<li class="custom-li">작성 가이드 메뉴 부분</li>
+</ol>
+<p><img alt="리본메뉴1.jpg" class="custom-img" src="./_resources/리본메뉴1.jpg"/></p>
+<p><br/></p>
+<hr/>
+<h2 id="section-3.3">(3) 개별/전체 검증</h2>
+<p><strong style="display: inline;">부서별 Template</strong> 작성을 올바르게 수행하였는지 검증하는 기능입니다.<br>
+<strong style="display: inline;">검증 수행 시</strong> 아래와 같은 검증을 수행합니다.</br></p>
+<ol>
+<li class="custom-li">필수 표 테두리 검증</li>
+<li class="custom-li">필수 표 행/열/병합 정보 검증</li>
+<li class="custom-li">필수 표가 표준 XML을 준수하는 지 여부 검증</li>
+<li class="custom-li">일반 표 테두리 검증</li>
+</ol>
+<blockquote style="background-color: #F5F5F5; padding: 10px; margin-left: 0; margin-right: 0;"><div class="blockquote-sidebar"></div>
+<p>📌 Dart 표준 양식 상 표준 XML을 준수하지 않는 경우 DSD 생성이 불가능합니다.</p>
+</blockquote>
+<p><img alt="검증1.jpg" class="custom-img" src="./_resources/검증1.jpg"/></p>
+<ul class="custom-ul">
+<li class="custom-li">검증 내역 및 검증 결과를 확인하시고, 관련 내용이 부서별 Template 작성 가이드를 준수하였는지 검토해주시기 바랍니다.</li>
+<li class="custom-li">검증 결과 실제로 검토가 필요한 부분은 검증 결과 상 링크 열 <a href="">위치로 이동</a>을 통하여 편하게 확인할 수 있습니다.</li>
+<li class="custom-li"><strong style="display: inline;">검증 완료 시</strong> 아래와 같은 결과를 확인하실 수 있습니다.</li>
+</ul>
+<p><img alt="검증2.jpg" class="custom-img" src="./_resources/검증2.jpg"/></p>
+<p><br/></p>
+<hr/>
+<h2 id="section-3.4">(4) 표시 변경</h2>
+<p>검증이 모두 정상적으로 마무리된 경우 <strong style="display: inline;">작성 완료</strong> 기능을 수행합니다.</p>
+<ul class="custom-ul">
+<li class="custom-li">작업 현황이 <strong style="display: inline;">작업 완료</strong>로 변경되며, <strong style="display: inline;">모든 시트에 보호가 생성</strong>되어 시트의 내용을 변경할 수 없습니다.</li>
+</ul>
+<p><img alt="안내1.jpg" class="custom-img" src="./_resources/안내1.jpg"/></p>
+<ul class="custom-ul">
+<li class="custom-li">만일 작성 완료를 수행한 후 추가 작업이 필요한 경우 <strong style="display: inline;">재작성</strong> 기능을 수행합니다.<br>
+    작업 현황이 <strong style="display: inline;">작업 중</strong>으로 변경되며, 모든 시트의 보호가 해제됩니다.</br></li>
+</ul>
+<p><img alt="안내2.jpg" class="custom-img" src="./_resources/안내2.jpg"/></p>
+<hr/>
+<h2 id="section-3.5">(5) 필수 표 메뉴</h2>
+<p><strong style="display: inline;">필수 표 메뉴는 필수 표의 행 추가 및 행 삭제를 위한 기능을 제공합니다.</strong></p>
+<ul class="custom-ul">
+<li class="custom-li">필수표 행 추가 및 행 삭제는 기본적으로 <strong style="display: inline;">필수 표의 영역 내 본문 행</strong>에서만 작동합니다.<br/> 만일 필수 표의 영역이 아니거나 제목 행인 경우 다음과 같이 행 추가 및 행 삭제가 수행되지 않습니다.</li>
+</ul>
+<p><br/></p>
+<p><strong style="display: inline;">1.  필수 표의 영역 구분</strong><br/><br>
+<img alt="필수표영역.jpg" class="custom-img" src="./_resources/필수표영역.jpg"/></br></p>
+<ul class="custom-ul">
+<li class="custom-li">필수 표의 영역이 아닌 경우 안내 메시지</li>
+</ul>
+<p><img alt="안내3.jpg" class="custom-img" src="./_resources/안내3.jpg"/></p>
+<ul class="custom-ul">
+<li class="custom-li">필수 표의 제목 행인 경우<br>
+제목 행이 두 줄 이상인 경우 <strong style="display: inline;">셀 배경 색</strong>을 기준으로 제목 행을 판별합니다.<br/> <strong style="display: inline;">회색</strong>의 경우 제목 행으로 간주됩니다.</br></li>
+</ul>
+<p><img alt="안내4.jpg" class="custom-img" src="./_resources/안내4.jpg"/></p>
+<p><br/></p>
+<p><strong style="display: inline;">2. 필수 표 행 추가</strong></p>
+<ul class="custom-ul">
+<li class="custom-li">추가할 행 수를 1 이상의 정수로 입력합니다.</li>
+<li class="custom-li">Dart 표준 양식 상 행 추가가 불가능한 행의 경우 추가가 되지 않습니다.</li>
+</ul>
+<p><img alt="행추가.jpg" class="custom-img" src="./_resources/행추가.jpg"/></p>
+<p><br/></p>
+<p><strong style="display: inline;">3. 필수 표 행 삭제</strong></p>
+<ul class="custom-ul">
+<li class="custom-li">삭제할 행 수를 1 이상의 정수로 입력합니다.</li>
+<li class="custom-li">Dart 표준 양식 상 행 삭제가 불가능한 행의 경우 삭제가 되지 않습니다.</li>
+<li class="custom-li">그외 로직 상 삭제가 불가능한 경우 안내 창과 함께 행 삭제 기능이 실행되지 않습니다.</li>
+</ul>
+<p><img alt="행삭제.jpg" class="custom-img" src="./_resources/행삭제.jpg"/></p>
+<p><br/></p>
+<ol>
+<li class="custom-li">
+<p>필수 표 테두리 칠하기(선택 기능)</p>
+</li>
+<li class="custom-li">
+<p>선택된 영역의 필수 표 테두리를 적절한 방식으로 생성합니다.</p>
+</li>
+<li class="custom-li">편의를 위한 선택 기능으로 필요하실 경우 사용 부탁 드립니다.<br>
+<br/> </br></li>
+</ol>
+<hr/>
+<h2 id="section-3.6">(6) 작성가이드 메뉴</h2>
+<p><strong style="display: inline;">작성가이드 메뉴</strong>는 <strong style="display: inline;">Dart 표준 작성 가이드</strong>에 대해 아래와 같은 기능을 제공 합니다.</p>
+<ul class="custom-ul">
+<li class="custom-li">Dart 표준 작성 가이드에 대한 Tree View 형식의 열람</li>
+<li class="custom-li">다수의 작성 기준에 대한 즐겨찾기 기능(선택사항 메뉴)</li>
+<li class="custom-li">
+<p>회사만의 작성 기준이 별도로 존재할 경우를 위한 사용자 기재사항의 저장 기능<br>
+<br/></br></p>
+</li>
+<li class="custom-li">
+<p>최초 작성 (Initial Template에서 일괄적으로 세팅)</p>
+</li>
+<li class="custom-li">
+<p>작성 가이드 목차 선택</p>
+</li>
+<li class="custom-li">원문 영역에서 저장하고 싶은 부분 선택 및 선택 사항에 서 확인</li>
+<li class="custom-li">사용자 기재사항에 회사별 가이드 기입</li>
+<li class="custom-li">창을 닫아 사용자 작업 사항 저장 (AU열에 G1 등의 표시 확인)</li>
+</ul>
+<p><img alt="작성가이드1.jpg" class="custom-img" src="./_resources/작성가이드1.jpg"/></p>
+<ol>
+<li class="custom-li">
+<p>작성 내역 확인 (기존 작성 부분)</p>
+</li>
+<li class="custom-li">
+<p>AU 열 G1 클릭 및  작성 가이드 열기 기능 수행</p>
+</li>
+</ol>
+<p><img alt="작성가이드2.jpg" class="custom-img" src="./_resources/작성가이드2.jpg"/></p>
+<ul class="custom-ul">
+<li class="custom-li">선택 내역 및 작성 내역 확인 가능</li>
+<li class="custom-li">만일 해당 화면이 짤려서 나오는 경우 아래 사항 확인<ul class="custom-ul">
+<li class="custom-li">바탕화면 - 디스플레이 설정 - 화면 배율 - 100% 이하 여부</li>
+</ul>
+</li>
+</ul>
+<p><img alt="작성가이드3.jpg" class="custom-img" src="./_resources/작성가이드3.jpg"/></p>
+    </div>
+    <script src="script.js"></script>
+    </body>
+    </html>
+    
