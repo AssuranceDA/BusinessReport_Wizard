@@ -34,6 +34,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById('contentContainer').prepend(currentSectionTextElement);
 
+    const images = document.querySelectorAll('img');
+
+    images.forEach(image => {
+        // 새 div 요소 생성
+        const wrapper = document.createElement('div');
+        // 'image-wrapper' 클래스 적용
+        wrapper.className = 'image-wrapper';
+
+        // 이미지를 wrapper로 감싸기 전에 이미지의 부모 요소를 가져옴
+        const parent = image.parentNode;
+
+        // 이미지를 wrapper에 삽입
+        wrapper.appendChild(image.cloneNode(true));
+
+        // 원본 이미지를 wrapper로 대체
+        parent.replaceChild(wrapper, image);
+    });
+
 
     tocItems.forEach(function(tocItem) {
         tocItem.addEventListener('click', function(event) {
