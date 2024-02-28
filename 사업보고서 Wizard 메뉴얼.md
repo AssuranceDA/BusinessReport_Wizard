@@ -3,7 +3,71 @@
 
 ___
 # 1. 실행 클라이언트 가이드
-## (1) Initial Template 생성
+## (1) 로그인 단계
+### 1) 최초 회원가입 - Workbench
+#### Workbench Account Activate(회원가입)
+1) PwC 삼일회계법인 담당자가 고객사의 이메일을 시스템에 등록하게 되면 아래와 같이 Activate 이메일이 오게 되며, 하단에 Activate your accout를 누르면 로그인 페이지로 이동합니다.
+
+<br>
+
+![activation_email.png](../../_resources/activation_email.png)
+<br>
+
+2) Activate 페이지에서 메일주소, 비밀번호, 국가코드(+82), 휴대폰번호를 입력합니다.
+
+![sign_in.png](../../_resources/sign_in.png)
+
+<br>
+
+3) 문자 혹은 전화로 전달받은 코드를 입력하여 인증을 수행합니다.
+<br>
+
+![phone_verification.png](../../_resources/phone_verification.png)
+<br>
+
+![phone_verification2.png](../../_resources/phone_verification2.png)
+<br>
+
+4) 가입절차가 완료 되었습니다.
+<br>
+
+![activation_success.png](../../_resources/activation_success.png)
+<br>
+
+### 2) 로그인 절차
+#### 클라이언트 실행 이후 로그인 단계
+1. 로그인 메일주소에 상단에서 activate한 이메일을 입력한 후 확인을 누릅니다.
+<br>
+
+![login_email.png](../../_resources/login_email.png)
+<br>
+
+2. 비밀번호를 입력하고 확인을 누릅니다.
+<br>
+
+![login_password.png](../../_resources/login_password.png)
+<br>
+
+3. 2차 인증 수단을 선택한 후 확인을 누릅니다.
+<br>
+
+![otp_option.png](../../_resources/otp_option.png)
+<br>
+
+4. 전달받은 인증 코드를 입력한 후 확인을 누릅니다.
+<br>
+
+![otp_input.png](../../_resources/otp_input.png)
+<br>
+
+5. 2차 인증에 실패한 경우, 아래와 같은 경고창이 출력되며, 확인을 누르면 다시 인증을 시도할 수 있습니다.
+<br>
+
+![wrong_otp_popup.png](../../_resources/wrong_otp_popup.png)
+<br>
+___
+
+## (2) Initial Template 생성
 ### 1) 단계 설명
 **본 단계는 최초 사업보고서 Initial Template를 생성하는 단계입니다.<br>**
 다음의 자료를 토대로 엑셀 기반의 사업보고서 작성을 위한 Template를 생성합니다.
@@ -59,12 +123,13 @@ Input DSD 파일이 최신 버전이 아닐 시 Dart 편집기로 실행 시 아
 
 #### 아래 안내사항이 보이는 경우 4)-1의 절차를 수행하여 주십시오.
 
+
 ![dart_file_error.jpg](../../_resources/dart_file_error.jpg)
 <br>
 
 
 ___
-## (2) 부서별 Template 생성
+## (3) 부서별 Template 생성
 ### 1) 단계 설명
 **본 단계는 1-(1) 에서 생성된 엑셀 파일(xlsm)을 토대로 작성 부서 별 엑셀 파일(xlsm) N개를 생성합니다.**
 
@@ -170,7 +235,7 @@ ___
 <br>
 
 ___
-## (3) 사업보고서 최종 DSD 생성
+## (4) 사업보고서 최종 DSD 생성
 ### 1) 단계 설명
 **본 단계는 1-(2) 에서 생성된 작성 부서 별 엑셀 파일(xlsm)을 토대로 최종적으로 사업보고서 DSD를 생성합니다.**
 1-(2)에서 생성한 부서 별 Template를 기반으로 아래와 같은 작업을 진행해주셔야 합니다.
@@ -190,7 +255,7 @@ ___
 <br>
 
 ___
-## (4) Initial Rolling 작업 - TBD
+## (5) Initial Rolling 작업 - TBD
 ### 1) 단계 설명
 **본 단계는 최초 사업보고서 Initial Template를 생성하는 단계입니다. Initial Template 생성 대체 작업
 <br>**
@@ -204,7 +269,7 @@ ___
 <br>
 
 _____
-## (5) 사업보고서 대사
+## (6) 사업보고서 대사
 ### 1) 기능 설명
 **두 사업보고서 간 차이점을 대사하는 기능입니다.** 
 현재 기준 DSD와 비교 대상 DSD를 입력 후 실행해주시면 사업보고서 대사 파일이 생성됩니다.
